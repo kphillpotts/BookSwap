@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ViewCell
+    x:Class="BookSwap.Cells.BookViewCell"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+    mc:Ignorable="d">
+    <ViewCell.View>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <skia:SKCanvasView
+                x:Name="CellBackgroundCanvas"
+                Grid.RowSpan="2"
+                Grid.ColumnSpan="2"
+                HorizontalOptions="Fill"
+                PaintSurface="CellBackgroundCanvas_PaintSurface"
+                VerticalOptions="Fill" />
+
+
+            <StackLayout Margin="20" VerticalOptions="Center">
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="20"
+                    Text="{Binding Title}" />
+                <Label Text="{Binding Author}" />
+            </StackLayout>
+
+            <StackLayout
+                Grid.Row="1"
+                Margin="20"
+                HorizontalOptions="Start"
+                Orientation="Horizontal"
+                Spacing="10"
+                VerticalOptions="Center">
+                <BoxView
+                    BackgroundColor="Blue"
+                    CornerRadius="20"
+                    HeightRequest="40"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start"
+                    WidthRequest="40" />
+                <Label Text="ERNEST SOMEBODY" VerticalOptions="Center" />
+            </StackLayout>
+
+            <pancake:PancakeView
+                Grid.RowSpan="2"
+                Grid.Column="1"
+                Margin="20"
+                Elevation="10"
+                HasShadow="True"
+                HorizontalOptions="Center"
+                VerticalOptions="Center">
+                <Image Source="{Binding CoverImage}" />
+            </pancake:PancakeView>
+
+        </Grid>
+
+    </ViewCell.View>
+</ViewCell>
