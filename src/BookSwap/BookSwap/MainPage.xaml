@@ -55,16 +55,22 @@
                 HasShadow="True">
                 <Image Source="book_extremelyloud" />
             </pancake:PancakeView>
-            <StackLayout Grid.Column="1" VerticalOptions="Center">
+            <StackLayout
+                Grid.Column="1"
+                Margin="5,0,0,0"
+                VerticalOptions="Center">
                 <Label
-                    FontAttributes="Bold"
+                    Style="{StaticResource SwapUser}"
                     Text="YOUR BOOK"
                     TextColor="{Binding SwapFromBook.Colors.AccentTextColor}" />
                 <Label
-                    FontAttributes="Bold"
+                    Style="{StaticResource SwapBookTitle}"
                     Text="{Binding SwapFromBook.Title}"
                     TextColor="{Binding SwapFromBook.Colors.TitleColor}" />
-                <Label Text="{Binding SwapFromBook.Author}" TextColor="{Binding SwapFromBook.Colors.TitleColor}" />
+                <Label
+                    Style="{StaticResource SwapAuthor}"
+                    Text="{Binding SwapFromBook.Author}"
+                    TextColor="{Binding SwapFromBook.Colors.TitleColor}" />
             </StackLayout>
             <Image
                 Grid.Column="2"

@@ -66,6 +66,11 @@
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <BundleResource Include="Resources\OpenSans-Light.ttf" />
+    <BundleResource Include="Resources\OpenSans-Regular.ttf" />
+    <BundleResource Include="Resources\OpenSans-Bold.ttf" />
+    <BundleResource Include="Resources\OpenSans-SemiBold.ttf" />
+    <BundleResource Include="Resources\OpenSans-ExtraBold.ttf" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />

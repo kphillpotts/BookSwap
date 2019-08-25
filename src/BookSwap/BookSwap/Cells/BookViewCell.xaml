@@ -29,18 +29,20 @@
                 VerticalOptions="Fill" />
 
 
-            <StackLayout Margin="20" VerticalOptions="Center">
+            <StackLayout Margin="30,0,0,0" VerticalOptions="Center">
                 <Label
-                    FontAttributes="Bold"
-                    FontSize="20"
+                    Style="{StaticResource BookTitle}"
                     Text="{Binding Title}"
                     TextColor="{Binding Colors.TitleColor}" />
-                <Label Text="{Binding Author}" TextColor="{Binding Colors.TitleColor}" />
+                <Label
+                    Style="{StaticResource Author}"
+                    Text="{Binding Author}"
+                    TextColor="{Binding Colors.TitleColor}" />
             </StackLayout>
 
             <StackLayout
                 Grid.Row="1"
-                Margin="20"
+                Margin="30,20"
                 HorizontalOptions="Start"
                 Orientation="Horizontal"
                 Spacing="10"
@@ -48,19 +50,19 @@
                 <pancake:PancakeView
                     BorderColor="White"
                     BorderThickness="1.5"
-                    CornerRadius="20"
+                    CornerRadius="18"
                     Elevation="0"
                     HasShadow="True">
                     <Image
-                        HeightRequest="40"
+                        HeightRequest="36"
                         HorizontalOptions="Start"
                         Source="{Binding UserImage}"
                         VerticalOptions="Start"
-                        WidthRequest="40" />
+                        WidthRequest="36" />
                 </pancake:PancakeView>
 
                 <Label
-                    FontAttributes="Bold"
+                    Style="{StaticResource User}"
                     Text="{Binding UserName}"
                     TextColor="{Binding Colors.AccentTextColor}"
                     VerticalOptions="Center" />
@@ -69,7 +71,7 @@
             <pancake:PancakeView
                 Grid.RowSpan="2"
                 Grid.Column="1"
-                Margin="20"
+                Margin="20,20,30,20"
                 Elevation="10"
                 HasShadow="True"
                 HorizontalOptions="Center"
