@@ -11,7 +11,9 @@ namespace BookSwap.Models
         private string _title;
         private string _author;
         private string _coverImage;
-        private string _accentColor;
+        private ColorValues _colors;
+        private string _userImage;
+        private string _userName;
 
         public string Title
         {
@@ -30,11 +32,22 @@ namespace BookSwap.Models
             get { return _coverImage; }
             set { SetProperty<string>(ref _coverImage, value); }
         }
-        public string AccentColor
+        public ColorValues Colors
         {
-            get { return _accentColor; }
-            set { SetProperty<string>(ref _accentColor, value); }
+            get { return _colors; }
+            set { SetProperty<ColorValues>(ref _colors, value); }
         }
+        public string UserImage
+        {
+            get { return _userImage; }
+            set { SetProperty<string>(ref _userImage, value); }
+        }
+        public string UserName
+        {
+            get { return _userName; }
+            set { SetProperty<string>(ref _userName, value); }
+        }
+
 
     }
 }

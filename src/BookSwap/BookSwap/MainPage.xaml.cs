@@ -1,4 +1,5 @@
-﻿using SkiaSharp;
+﻿using BookSwap.ViewModels;
+using SkiaSharp;
 using SkiaSharp.Views.Forms;
 using System;
 using System.Collections.Generic;
@@ -26,11 +27,10 @@ namespace BookSwap
         public MainPage()
         {
             InitializeComponent();
-            Color color = Color.FromHex("#FFF571");
-            
-            _accentColor = color.ToSKColor();
-            _accentDarkColor = color.WithLuminosity(color.Luminosity - .2).ToSKColor();
-            _accentExtraDarkColor = color.WithLuminosity(color.Luminosity - .25).ToSKColor();
+
+            _accentColor = ((BooksViewModel)BindingContext).SwapFromBook.Colors.Accent.ToSKColor();
+            _accentDarkColor = ((BooksViewModel)BindingContext).SwapFromBook.Colors.DarkAccent.ToSKColor();
+            _accentExtraDarkColor = ((BooksViewModel)BindingContext).SwapFromBook.Colors.ExtraDarkAccent.ToSKColor();
             _accentPaint = new SKPaint() { Color = _accentColor };
             _accentDarkPaint = new SKPaint() { Color = _accentDarkColor };
             _accentExtraDarkPaint = new SKPaint() { Color = _accentExtraDarkColor };
@@ -75,8 +75,6 @@ namespace BookSwap
                 path.Close();
                 canvas.DrawPath(path, _accentExtraDarkPaint);
             }
-
-
         }
     }
 }

@@ -22,6 +22,8 @@ namespace BookSwap.Droid
         public PointF GetCoordinates(VisualElement view)
         {
             var renderer = Platform.GetRenderer(view);
+            if (renderer == null)
+                return new PointF();
             var nativeView = renderer.View;
             var location = new int[2];
 

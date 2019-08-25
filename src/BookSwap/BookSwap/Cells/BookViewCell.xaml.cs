@@ -50,11 +50,11 @@ namespace BookSwap.Cells
 
             if (this.BindingContext != null)
             {
-                Color color = Color.FromHex(((Book)BindingContext).AccentColor);
+                var colors = ((Book)BindingContext).Colors;
 
-                _accentColor = color.ToSKColor();
-                _accentDarkColor = color.WithLuminosity(color.Luminosity - .07).ToSKColor();
-                _accentExtraDarkColor = color.WithLuminosity(color.Luminosity - .15).ToSKColor();
+                _accentColor = colors.Accent.ToSKColor();
+                _accentDarkColor = colors.DarkAccent.ToSKColor();
+                _accentExtraDarkColor = colors.ExtraDarkAccent.ToSKColor();
                 _accentPaint = new SKPaint() { Color = _accentColor };
                 _accentDarkPaint = new SKPaint() { Color = _accentDarkColor };
                 _accentExtraDarkPaint = new SKPaint() { Color = _accentExtraDarkColor };

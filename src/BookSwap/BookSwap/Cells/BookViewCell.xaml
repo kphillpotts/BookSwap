@@ -33,8 +33,9 @@
                 <Label
                     FontAttributes="Bold"
                     FontSize="20"
-                    Text="{Binding Title}" />
-                <Label Text="{Binding Author}" />
+                    Text="{Binding Title}"
+                    TextColor="{Binding Colors.TitleColor}" />
+                <Label Text="{Binding Author}" TextColor="{Binding Colors.TitleColor}" />
             </StackLayout>
 
             <StackLayout
@@ -44,14 +45,25 @@
                 Orientation="Horizontal"
                 Spacing="10"
                 VerticalOptions="Center">
-                <BoxView
-                    BackgroundColor="Blue"
+                <pancake:PancakeView
+                    BorderColor="White"
+                    BorderThickness="1.5"
                     CornerRadius="20"
-                    HeightRequest="40"
-                    HorizontalOptions="Start"
-                    VerticalOptions="Start"
-                    WidthRequest="40" />
-                <Label Text="ERNEST SOMEBODY" VerticalOptions="Center" />
+                    Elevation="0"
+                    HasShadow="True">
+                    <Image
+                        HeightRequest="40"
+                        HorizontalOptions="Start"
+                        Source="{Binding UserImage}"
+                        VerticalOptions="Start"
+                        WidthRequest="40" />
+                </pancake:PancakeView>
+
+                <Label
+                    FontAttributes="Bold"
+                    Text="{Binding UserName}"
+                    TextColor="{Binding Colors.AccentTextColor}"
+                    VerticalOptions="Center" />
             </StackLayout>
 
             <pancake:PancakeView

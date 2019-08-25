@@ -4,80 +4,90 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using Xamarin.Forms;
 
 namespace BookSwap.ViewModels
 {
     public class BooksViewModel : ObservableObject
     {
         public IList<Book> Books { get; set; }
+        public Book SwapFromBook { get; set; }
 
         public BooksViewModel()
         {
+            SwapFromBook = new Book()
+            {
+                Title = "Extremely Loud and Incredibly Close",
+                Author = "Jonathan Safran Foer",
+                Colors = new ColorValues
+                {
+                    Accent = Color.FromHex("#FFF571"),
+                    DarkAccent = Color.FromHex("#F1EE55"),
+                    ExtraDarkAccent = Color.FromHex("#F3DD3F"),
+                    TitleColor = Color.FromHex("#F00D39"),
+                    AccentTextColor = Color.FromHex("#B7A701"),
+                },
+                UserImage = "https://randomuser.me/api/portraits/women/12.jpg",
+                CoverImage = "book_extremelyloud",
+            };
+
             Books = new ObservableCollection<Book>()
             {
                 new Book()
                 {
                     Title = "Everything is Illuminated",
                     Author = "Jonathan Safran Foer",
-                    AccentColor = "#0FF4C3",
-                    CoverImage = "book_illumated",
+                    Colors = ColorPalette.GetNextColorValues(),
+                    UserImage = "https://randomuser.me/api/portraits/women/12.jpg",
+                    CoverImage = "book_illuminated",
+                    UserName = "ERNEST ASANOV"
                 },
                 new Book()
                 {
                     Title = "Ulysses",
                     Author = "James Joyce",
-                    AccentColor = "#B76EFE",
+                    Colors = ColorPalette.GetNextColorValues(),
+                    UserImage = "https://randomuser.me/api/portraits/men/12.jpg",
                     CoverImage = "book_ulysses",
+                    UserName = "KATE BAIKOVA"
                 },
                 new Book()
                 {
                     Title = "Flowers for Algernon",
                     Author = "Daniel Keyes",
-                    AccentColor = "#FF848B",
+                    Colors = ColorPalette.GetNextColorValues(),
+                    UserImage = "https://randomuser.me/api/portraits/women/24.jpg",
                     CoverImage = "book_flowers",
+                    UserName = "MARINA YALANSKA"
                 },
                 new Book()
                 {
-                    Title = "Everything is Illuminated",
-                    Author = "Jonathan Safran Foer",
-                    AccentColor = "#0FF4C3",
-                    CoverImage = "book_illumated",
+                    Title = "Casino Royale",
+                    Author = "Ian Fleming",
+                    Colors = ColorPalette.GetNextColorValues(),
+                    UserImage = "https://randomuser.me/api/portraits/men/24.jpg",
+                    CoverImage = "book_casino",
+                    UserName = "VLAD TARAN"
                 },
                 new Book()
                 {
-                    Title = "Ulysses",
-                    Author = "James Joyce",
-                    AccentColor = "#B76EFE",
-                    CoverImage = "book_ulysses",
+                    Title = "City on the Edge",
+                    Author = "Mark Goldman",
+                    Colors = ColorPalette.GetNextColorValues(),
+                    UserImage = "https://randomuser.me/api/portraits/women/32.jpg",
+                    CoverImage = "book_city",
+                    UserName = "KONST"
+
                 },
                 new Book()
                 {
-                    Title = "Flowers for Algernon",
-                    Author = "Daniel Keyes",
-                    AccentColor = "#FF848B",
-                    CoverImage = "book_flowers",
-                },
-                new Book()
-                {
-                    Title = "Everything is Illuminated",
-                    Author = "Jonathan Safran Foer",
-                    AccentColor = "#0FF4C3",
-                    CoverImage = "book_illumated",
-                },
-                new Book()
-                {
-                    Title = "Ulysses",
-                    Author = "James Joyce",
-                    AccentColor = "#B76EFE",
-                    CoverImage = "book_ulysses",
-                },
-                new Book()
-                {
-                    Title = "Flowers for Algernon",
-                    Author = "Daniel Keyes",
-                    AccentColor = "#FF848B",
-                    CoverImage = "book_flowers",
-                },
+                    Title = "The Hobbit",
+                    Author = "J. R. R. Tolkien",
+                    Colors = ColorPalette.GetNextColorValues(),
+                    UserImage = "https://randomuser.me/api/portraits/men/32.jpg",
+                    CoverImage = "book_hobbit",
+                    UserName = "DENYS BOLDYRIEV"
+                }
             };
         }
     }

@@ -159,15 +159,6 @@
     <BundleResource Include="Resources\book_flowers%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\book_illumated.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\book_illumated%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\book_illumated%403x.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\book_ulysses.png" />
   </ItemGroup>
   <ItemGroup>
@@ -202,5 +193,41 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\search%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\book_casino.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\book_casino%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\book_casino%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\book_city.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\book_city%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\book_city%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\book_hobbit%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\book_hobbit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\book_hobbit%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\book_illuminated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\book_illuminated%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\book_illuminated%403x.png" />
   </ItemGroup>
 </Project>
