@@ -14,6 +14,7 @@ namespace BookSwap.Models
         private ColorValues _colors;
         private string _userImage;
         private string _userName;
+        private string _description;
 
         public string Title
         {
@@ -46,6 +47,12 @@ namespace BookSwap.Models
         {
             get { return _userName; }
             set { SetProperty<string>(ref _userName, value); }
+        }
+
+        public string Description
+        {
+            get { return _description; }
+            set { SetProperty<string>(ref _description, value); }
         }
 
 

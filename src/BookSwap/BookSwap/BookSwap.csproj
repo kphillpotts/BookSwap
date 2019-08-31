@@ -10,17 +10,31 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\bookmark.svg" />
+    <None Remove="Resources\swap_arrow.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\bookmark.svg" />
+    <EmbeddedResource Include="Resources\swap_arrow.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Refractored.MvvmHelpers" Version="1.3.0" />
     <PackageReference Include="SkiaSharp.Views.Forms" Version="1.68.0" />
-    <PackageReference Include="Xamarin.Forms" Version="4.2.0.709249" />
+    <PackageReference Include="Xamarin.Forms" Version="4.1.0.709244" />
     <PackageReference Include="Xamarin.Essentials" Version="1.2.0" />
     <PackageReference Include="Xamarin.Forms.DebugRainbows" Version="1.0.16" />
     <PackageReference Include="Xamarin.Forms.PancakeView" Version="1.1.5" />
+    <PackageReference Include="Xamarin.Plugin.SharedTransitions" Version="2.0.2" />
     <PackageReference Include="XFUtils" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Update="Cells\BookViewCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="SwapDetails.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

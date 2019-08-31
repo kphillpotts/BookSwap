@@ -1,4 +1,6 @@
-﻿using BookSwap.ViewModels;
+﻿using BookSwap.Models;
+using BookSwap.ViewModels;
+using Plugin.SharedTransitions;
 using SkiaSharp;
 using SkiaSharp.Views.Forms;
 using System;
@@ -27,6 +29,8 @@ namespace BookSwap
         public MainPage()
         {
             InitializeComponent();
+
+            this.BindingContext = App.MainViewModel;
 
             _accentColor = ((BooksViewModel)BindingContext).SwapFromBook.Colors.Accent.ToSKColor();
             _accentDarkColor = ((BooksViewModel)BindingContext).SwapFromBook.Colors.DarkAccent.ToSKColor();
@@ -75,6 +79,16 @@ namespace BookSwap
                 path.Close();
                 canvas.DrawPath(path, _accentExtraDarkPaint);
             }
+        }
+
+        private async void BooksListView_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            // set the selected book
+            ((BooksViewModel)BindingContext).SelectedBook = e.Item as Book;
+            SharedTransitionNavigationPage.SetTransitionDuration(this, 300);
+            SharedTransitionNavigationPage.SetTransitionSelectedGroup(this,
+                ((BooksViewModel)BindingContext).SelectedBook.Title);
+            await Navigation.PushAsync(new SwapDetails());
         }
     }
 }

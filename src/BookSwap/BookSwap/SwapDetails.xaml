@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="BookSwap.SwapDetails"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    xmlns:rainbow="clr-namespace:Xamarin.Forms.DebugRainbows;assembly=Xamarin.Forms.DebugRainbows"
+    xmlns:sharedTransitions="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
+    xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+
+        <Grid rainbow:DebugRainbow.IsDebug="False">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="80" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!--  background  -->
+            <skia:SKCanvasView
+                x:Name="PageBackground"
+                Grid.RowSpan="3"
+                HorizontalOptions="Fill"
+                PaintSurface="PageBackground_PaintSurface"
+                VerticalOptions="Fill" />
+
+
+
+            <!--  swap from book  -->
+            <Grid Margin="10,0,10,0" VerticalOptions="Start">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="AUTO" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="AUTO" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <BoxView
+                    x:Name="BookBorderBoxView"
+                    Grid.RowSpan="2"
+                    HeightRequest="218"
+                    HorizontalOptions="Center"
+                    Opacity=".5"
+                    VerticalOptions="Center"
+                    WidthRequest="153"
+                    Color="{Binding SwapFromBook.Colors.TitleColor}" />
+                <Image
+                    Grid.Row="0"
+                    Grid.RowSpan="2"
+                    Grid.Column="0"
+                    sharedTransitions:Transition.Name="FromCoverImage"
+                    Aspect="AspectFit"
+                    HeightRequest="198"
+                    HorizontalOptions="Center"
+                    Source="{Binding SwapFromBook.CoverImage}"
+                    VerticalOptions="Center"
+                    WidthRequest="133" />
+
+                <StackLayout Grid.Column="1" Margin="10,10,0,0">
+                    <Label
+                        x:Name="FromTitleLabel"
+                        sharedTransitions:Transition.Name="FromTitle"
+                        Style="{StaticResource BookTitle}"
+                        Opacity="0"
+                        Text="{Binding SwapFromBook.Title}"
+                        TextColor="{Binding SwapFromBook.Colors.TitleColor}"
+                        TranslationY="50" />
+                    <Label
+                        x:Name="FromAuthorLabel"
+                        sharedTransitions:Transition.Name="FromAuthor"
+                        Opacity="0"
+                        Style="{StaticResource Author}"
+                        Text="{Binding SwapFromBook.Author}"
+                        TextColor="{Binding SwapFromBook.Colors.TitleColor}"
+                        TranslationY="50" />
+                </StackLayout>
+
+                <Grid
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Margin="0,0,0,30"
+                    VerticalOptions="End">
+
+                    <pancake:PancakeView
+                        x:Name="DescriptionBackground"
+                        Elevation="2"
+                        HasShadow="True"
+                        Opacity=".5">
+                        <BoxView Color="White" />
+                    </pancake:PancakeView>
+
+                    <Label
+                        x:Name="DescriptionText"
+                        Margin="10"
+                        LineBreakMode="TailTruncation"
+                        MaxLines="4"
+                        Style="{StaticResource Author}"
+                        Text="{Binding SwapFromBook.Description}"
+                        VerticalOptions="Center" />
+                </Grid>
+
+            </Grid>
+
+            <!--  swap banner  -->
+            <pancake:PancakeView
+                Grid.Row="1"
+                BackgroundColor="White"
+                CornerRadius="25"
+                Elevation="2"
+                HeightRequest="50"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                WidthRequest="200">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        HorizontalOptions="Center"
+                        Style="{StaticResource BookTitle}"
+                        Text="SWAP"
+                        TextColor="{Binding SelectedBook.Colors.ExtraDarkAccent}"
+                        VerticalOptions="Center" />
+
+                </Grid>
+            </pancake:PancakeView>
+
+
+            <!--  swap to book  -->
+            <Grid
+                Grid.Row="2"
+                Margin="10,0,10,10"
+                VerticalOptions="End">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="AUTO" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="AUTO" />
+                </Grid.ColumnDefinitions>
+
+                <BoxView
+                    Grid.RowSpan="2"
+                    Grid.Column="1"
+                    HeightRequest="218"
+                    HorizontalOptions="Center"
+                    Opacity=".5"
+                    VerticalOptions="Center"
+                    WidthRequest="153"
+                    Color="{Binding SelectedBook.Colors.TitleColor}" />
+                <Image
+                    Grid.Row="0"
+                    Grid.RowSpan="2"
+                    Grid.Column="1"
+                    sharedTransitions:Transition.Name="SelectedBook"
+                    Aspect="AspectFit"
+                    HeightRequest="198"
+                    HorizontalOptions="Center"
+                    Source="{Binding SelectedBook.CoverImage}"
+                    VerticalOptions="Center"
+                    WidthRequest="133" />
+
+                <StackLayout Grid.Column="0" Margin="10,0,0,0">
+                    <Label
+                        sharedTransitions:Transition.Name="ToTitle"
+                        Style="{StaticResource BookTitle}"
+                        Text="{Binding SelectedBook.Title}"
+                        TextColor="{Binding SelectedBook.Colors.TitleColor}" />
+                    <Label
+                        sharedTransitions:Transition.Name="ToAuthor"
+                        Opacity=".5"
+                        Style="{StaticResource Author}"
+                        Text="{Binding SelectedBook.Author}"
+                        TextColor="{Binding SelectedBook.Colors.TitleColor}" />
+                </StackLayout>
+
+                <Grid
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Margin="0,0,0,10"
+                    VerticalOptions="End">
+
+                    <pancake:PancakeView
+                        Elevation="2"
+                        HasShadow="True"
+                        Opacity=".5">
+                        <BoxView Color="White" />
+                    </pancake:PancakeView>
+
+                    <Label
+                        Margin="10"
+                        LineBreakMode="TailTruncation"
+                        MaxLines="4"
+                        Style="{StaticResource Author}"
+                        Text="{Binding SwapFromBook.Description}"
+                        VerticalOptions="Center" />
+                </Grid>
+
+            </Grid>
+
+
+
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

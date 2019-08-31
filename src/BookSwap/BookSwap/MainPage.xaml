@@ -8,6 +8,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     xmlns:rainbows="clr-namespace:Xamarin.Forms.DebugRainbows;assembly=Xamarin.Forms.DebugRainbows"
+    xmlns:sharedTransitions="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
     xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
     xmlns:viewmodel="clr-namespace:BookSwap.ViewModels"
     Title="hello"
@@ -53,7 +54,10 @@
                 Margin="10"
                 Elevation="20"
                 HasShadow="True">
-                <Image Source="book_extremelyloud" />
+                <Image
+                    sharedTransitions:Transition.Group="{Binding SelectedBook.Title}"
+                    sharedTransitions:Transition.Name="FromCoverImage"
+                    Source="{Binding SwapFromBook.CoverImage}" />
             </pancake:PancakeView>
             <StackLayout
                 Grid.Column="1"
@@ -64,10 +68,14 @@
                     Text="YOUR BOOK"
                     TextColor="{Binding SwapFromBook.Colors.AccentTextColor}" />
                 <Label
+                    sharedTransitions:Transition.Group="{Binding SelectedBook.Title}"
+                    sharedTransitions:Transition.Name="FromTitle"
                     Style="{StaticResource SwapBookTitle}"
                     Text="{Binding SwapFromBook.Title}"
                     TextColor="{Binding SwapFromBook.Colors.TitleColor}" />
                 <Label
+                    sharedTransitions:Transition.Group="{Binding SelectedBook.Title}"
+                    sharedTransitions:Transition.Name="FromAuthor"
                     Style="{StaticResource SwapAuthor}"
                     Text="{Binding SwapFromBook.Author}"
                     TextColor="{Binding SwapFromBook.Colors.TitleColor}" />
@@ -84,6 +92,7 @@
             x:Name="BooksListView"
             Grid.Row="1"
             CachingStrategy="RecycleElement"
+            ItemTapped="BooksListView_ItemTapped"
             ItemsSource="{Binding Books}"
             RowHeight="200"
             SeparatorVisibility="None">

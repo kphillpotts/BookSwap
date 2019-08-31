@@ -6,6 +6,7 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    xmlns:sharedTransitions="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
     xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
     mc:Ignorable="d">
     <ViewCell.View>
@@ -31,10 +32,14 @@
 
             <StackLayout Margin="30,0,0,0" VerticalOptions="Center">
                 <Label
+                    sharedTransitions:Transition.Group="{Binding Title}"
+                    sharedTransitions:Transition.Name="ToTitle"
                     Style="{StaticResource BookTitle}"
                     Text="{Binding Title}"
                     TextColor="{Binding Colors.TitleColor}" />
                 <Label
+                    sharedTransitions:Transition.Group="{Binding Title}"
+                    sharedTransitions:Transition.Name="ToAuthor"
                     Style="{StaticResource Author}"
                     Text="{Binding Author}"
                     TextColor="{Binding Colors.TitleColor}" />
@@ -76,7 +81,10 @@
                 HasShadow="True"
                 HorizontalOptions="Center"
                 VerticalOptions="Center">
-                <Image Source="{Binding CoverImage}" />
+                <Image
+                    sharedTransitions:Transition.Group="{Binding Title}"
+                    sharedTransitions:Transition.Name="SelectedBook"
+                    Source="{Binding CoverImage}" />
             </pancake:PancakeView>
 
         </Grid>
