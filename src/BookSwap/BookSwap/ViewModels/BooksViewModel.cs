@@ -39,7 +39,7 @@ namespace BookSwap.ViewModels
                     AccentTextColor = Color.FromHex("#B7A701"),
                 },
                 UserImage = "https://randomuser.me/api/portraits/women/12.jpg",
-            Description = "Helvetica affogato lyft, blog heirloom portland single-origin coffee. Crucifix readymade beard four loko gochujang freegan seitan humblebrag affogato poutine yr vape. Ennui XOXO put a bird on it, master cleanse sartorial tumeric air plant skateboard kogi pug iPhone art party kale chips succulents shoreditch. Ethical pok pok meggings, fixie prism PBR&B tumblr shoreditch pickled you probably haven't heard of them semiotics irony beard iceland skateboard. Actually offal flannel vegan squid.",
+            Description = "Oskar Schell is a super-smart nine-year old grieving the loss of his father, Thomas, who was killed in the World Trade Center attacks on September 11, 2001. He's feeling depressed and anxious, and feels angry and distant towards his mother.",
             CoverImage = "book_extremelyloud",
             };
 
@@ -52,7 +52,7 @@ namespace BookSwap.ViewModels
                     Colors = ColorPalette.GetNextColorValues(),
                     UserImage = "https://randomuser.me/api/portraits/women/12.jpg",
                     CoverImage = "book_illuminated",
-                    Description = "Helvetica affogato lyft, blog heirloom portland single-origin coffee. Crucifix readymade beard four loko gochujang freegan seitan humblebrag affogato poutine yr vape. Ennui XOXO put a bird on it, master cleanse sartorial tumeric air plant skateboard kogi pug iPhone art party kale chips succulents shoreditch. Ethical pok pok meggings, fixie prism PBR&B tumblr shoreditch pickled you probably haven't heard of them semiotics irony beard iceland skateboard. Actually offal flannel vegan squid.",
+                    Description = "Jonathan Safran Foer, a young American Jew and avid collector of his family's heritage, journeys to Ukraine in search of Augustine, the woman who saved his grandfather's life during the Nazi liquidation of Trachimbrod, his family shtetl (a small town) in occupied eastern Poland. ",
                     UserName = "ERNEST ASANOV"
                 },
                 new Book()
@@ -62,7 +62,7 @@ namespace BookSwap.ViewModels
                     Colors = ColorPalette.GetNextColorValues(),
                     UserImage = "https://randomuser.me/api/portraits/men/12.jpg",
                     CoverImage = "book_ulysses",
-                    Description = "Helvetica affogato lyft, blog heirloom portland single-origin coffee. Crucifix readymade beard four loko gochujang freegan seitan humblebrag affogato poutine yr vape. Ennui XOXO put a bird on it, master cleanse sartorial tumeric air plant skateboard kogi pug iPhone art party kale chips succulents shoreditch. Ethical pok pok meggings, fixie prism PBR&B tumblr shoreditch pickled you probably haven't heard of them semiotics irony beard iceland skateboard. Actually offal flannel vegan squid.",
+                    Description = "The three central characters—Stephen Dedalus (the hero of Joyce's earlier Portrait of the Artist as a Young Man); Leopold Bloom, a Jewish advertising canvasser; and his wife, Molly—are intended to be modern counterparts of Telemachus, Ulysses (Odysseus), and Penelope, respectively, and the events of the novel loosely",
                     UserName = "KATE BAIKOVA"
                 },
                 new Book()
@@ -72,7 +72,7 @@ namespace BookSwap.ViewModels
                     Colors = ColorPalette.GetNextColorValues(),
                     UserImage = "https://randomuser.me/api/portraits/women/24.jpg",
                     CoverImage = "book_flowers",
-                    Description = "Helvetica affogato lyft, blog heirloom portland single-origin coffee. Crucifix readymade beard four loko gochujang freegan seitan humblebrag affogato poutine yr vape. Ennui XOXO put a bird on it, master cleanse sartorial tumeric air plant skateboard kogi pug iPhone art party kale chips succulents shoreditch. Ethical pok pok meggings, fixie prism PBR&B tumblr shoreditch pickled you probably haven't heard of them semiotics irony beard iceland skateboard. Actually offal flannel vegan squid.",
+                    Description = "Algernon is a laboratory mouse who has undergone surgery to increase his intelligence. The story is told by a series of progress reports written by Charlie Gordon, the first human subject for the surgery, and it touches on ethical and moral themes such as the treatment of the mentally disabled.",
                     UserName = "MARINA YALANSKA"
                 },
                 new Book()
@@ -82,7 +82,7 @@ namespace BookSwap.ViewModels
                     Colors = ColorPalette.GetNextColorValues(),
                     UserImage = "https://randomuser.me/api/portraits/men/24.jpg",
                     CoverImage = "book_casino",
-                    Description = "Helvetica affogato lyft, blog heirloom portland single-origin coffee. Crucifix readymade beard four loko gochujang freegan seitan humblebrag affogato poutine yr vape. Ennui XOXO put a bird on it, master cleanse sartorial tumeric air plant skateboard kogi pug iPhone art party kale chips succulents shoreditch. Ethical pok pok meggings, fixie prism PBR&B tumblr shoreditch pickled you probably haven't heard of them semiotics irony beard iceland skateboard. Actually offal flannel vegan squid.",
+                    Description = "By Ian Fleming is a spy thriller set during the Cold War. It tells the story of one man, James Bond, and his evolution into a committed spy and secret agent. Bond accepts a mission to defeat a Russian agent, Le Chiffre, in a card game. ... There are several story lines in the book.",
                     UserName = "VLAD TARAN"
                 },
                 new Book()
@@ -91,7 +91,7 @@ namespace BookSwap.ViewModels
                     Author = "Mark Goldman",
                     Colors = ColorPalette.GetNextColorValues(),
                     UserImage = "https://randomuser.me/api/portraits/women/32.jpg",
-                    Description = "Helvetica affogato lyft, blog heirloom portland single-origin coffee. Crucifix readymade beard four loko gochujang freegan seitan humblebrag affogato poutine yr vape. Ennui XOXO put a bird on it, master cleanse sartorial tumeric air plant skateboard kogi pug iPhone art party kale chips succulents shoreditch. Ethical pok pok meggings, fixie prism PBR&B tumblr shoreditch pickled you probably haven't heard of them semiotics irony beard iceland skateboard. Actually offal flannel vegan squid.",
+                    Description = "In a sweeping narrative that speaks to the serious student of urban studies as well as the general reader, Mark Goldman tells the story of twentieth-century Buffalo, New York.",
                     CoverImage = "book_city",
                     UserName = "KONST"
 
@@ -102,7 +102,7 @@ namespace BookSwap.ViewModels
                     Author = "J. R. R. Tolkien",
                     Colors = ColorPalette.GetNextColorValues(),
                     UserImage = "https://randomuser.me/api/portraits/men/32.jpg",
-                    Description = "Helvetica affogato lyft, blog heirloom portland single-origin coffee. Crucifix readymade beard four loko gochujang freegan seitan humblebrag affogato poutine yr vape. Ennui XOXO put a bird on it, master cleanse sartorial tumeric air plant skateboard kogi pug iPhone art party kale chips succulents shoreditch. Ethical pok pok meggings, fixie prism PBR&B tumblr shoreditch pickled you probably haven't heard of them semiotics irony beard iceland skateboard. Actually offal flannel vegan squid.",
+                    Description = "In a hole in the ground there lived a hobbit. Not a nasty, dirty, wet hole, filled with the ends of worms and an oozy smell, nor yet a dry, bare, sandy hole with nothing in it to sit down on or to eat: it was a hobbit-hole, and that means comfort.",
                     CoverImage = "book_hobbit",
                     UserName = "DENYS BOLDYRIEV"
                 }

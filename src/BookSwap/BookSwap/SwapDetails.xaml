@@ -4,12 +4,28 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:ffimagesvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:local="clr-namespace:BookSwap"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     xmlns:rainbow="clr-namespace:Xamarin.Forms.DebugRainbows;assembly=Xamarin.Forms.DebugRainbows"
     xmlns:sharedTransitions="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
     xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+    ios:Page.PreferredStatusBarUpdateAnimation="Fade"
+    ios:Page.PrefersStatusBarHidden="True"
     mc:Ignorable="d">
+
+    <NavigationPage.TitleView>
+        <Label
+            Margin="-50,0,0,0"
+            FontAttributes="Bold"
+            FontSize="20"
+            HorizontalOptions="Center"
+            Text="Match"
+            TextColor="Black"
+            VerticalOptions="Center" />
+    </NavigationPage.TitleView>
     <ContentPage.Content>
 
         <Grid rainbow:DebugRainbow.IsDebug="False">
@@ -64,15 +80,13 @@
                 <StackLayout Grid.Column="1" Margin="10,10,0,0">
                     <Label
                         x:Name="FromTitleLabel"
-                        sharedTransitions:Transition.Name="FromTitle"
-                        Style="{StaticResource BookTitle}"
                         Opacity="0"
+                        Style="{StaticResource BookTitle}"
                         Text="{Binding SwapFromBook.Title}"
                         TextColor="{Binding SwapFromBook.Colors.TitleColor}"
                         TranslationY="50" />
                     <Label
                         x:Name="FromAuthorLabel"
-                        sharedTransitions:Transition.Name="FromAuthor"
                         Opacity="0"
                         Style="{StaticResource Author}"
                         Text="{Binding SwapFromBook.Author}"
@@ -94,9 +108,35 @@
                         <BoxView Color="White" />
                     </pancake:PancakeView>
 
+                    <local:TintedCachedImage
+                        x:Name="SwapFromBookmarkShadow"
+                        Margin="5"
+                        HeightRequest="20"
+                        HorizontalOptions="End"
+                        SvgSource="BookSwap.Resources.bookmark.svg"
+                        TintColor="{Binding SwapFromBook.Colors.ExtraDarkAccent}"
+                        TranslationX="3"
+                        TranslationY="-7"
+                        VerticalOptions="Start"
+                        WidthRequest="20" />
+
+                    <local:TintedCachedImage
+                        x:Name="SwapFromBookmark"
+                        Margin="5"
+                        HeightRequest="20"
+                        HorizontalOptions="End"
+                        SvgSource="BookSwap.Resources.bookmark.svg"
+                        TintColor="{Binding SelectedBook.Colors.ExtraDarkAccent}"
+                        TranslationY="-10"
+                        VerticalOptions="Start"
+                        WidthRequest="20" />
+
+
+
                     <Label
                         x:Name="DescriptionText"
                         Margin="10"
+                        FontSize="14"
                         LineBreakMode="TailTruncation"
                         MaxLines="4"
                         Style="{StaticResource Author}"
@@ -108,6 +148,7 @@
 
             <!--  swap banner  -->
             <pancake:PancakeView
+                x:Name="SwapPanel"
                 Grid.Row="1"
                 BackgroundColor="White"
                 CornerRadius="25"
@@ -115,24 +156,37 @@
                 HeightRequest="50"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
-                WidthRequest="200">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
+                WidthRequest="200" />
+            <Grid
+                Grid.Row="1"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                WidthRequest="180">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
 
-                    <Label
-                        Grid.Column="0"
-                        Grid.ColumnSpan="2"
-                        HorizontalOptions="Center"
-                        Style="{StaticResource BookTitle}"
-                        Text="SWAP"
-                        TextColor="{Binding SelectedBook.Colors.ExtraDarkAccent}"
-                        VerticalOptions="Center" />
+                <local:TintedCachedImage
+                    x:Name="CycleArrow"
+                    Margin="5"
+                    HeightRequest="20"
+                    SvgSource="BookSwap.Resources.swap_arrow.svg"
+                    TintColor="{Binding SelectedBook.Colors.ExtraDarkAccent}"
+                    WidthRequest="20" />
 
-                </Grid>
-            </pancake:PancakeView>
+                <Label
+                    x:Name="SwapLabel"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    HorizontalOptions="Center"
+                    Style="{StaticResource BookTitle}"
+                    Text="SWAP"
+                    TextColor="{Binding SelectedBook.Colors.ExtraDarkAccent}"
+                    VerticalOptions="Center" />
+
+            </Grid>
+
 
 
             <!--  swap to book  -->
@@ -150,6 +204,7 @@
                 </Grid.ColumnDefinitions>
 
                 <BoxView
+                    x:Name="SelectedBookBorderBoxView"
                     Grid.RowSpan="2"
                     Grid.Column="1"
                     HeightRequest="218"
@@ -172,12 +227,12 @@
 
                 <StackLayout Grid.Column="0" Margin="10,0,0,0">
                     <Label
-                        sharedTransitions:Transition.Name="ToTitle"
+                        x:Name="SelectedBookTitleLabel"
                         Style="{StaticResource BookTitle}"
                         Text="{Binding SelectedBook.Title}"
                         TextColor="{Binding SelectedBook.Colors.TitleColor}" />
                     <Label
-                        sharedTransitions:Transition.Name="ToAuthor"
+                        x:Name="SelectedBookAuthorLabel"
                         Opacity=".5"
                         Style="{StaticResource Author}"
                         Text="{Binding SelectedBook.Author}"
@@ -191,18 +246,45 @@
                     VerticalOptions="End">
 
                     <pancake:PancakeView
+                        x:Name="SelectedBookDescriptionBackground"
                         Elevation="2"
                         HasShadow="True"
                         Opacity=".5">
                         <BoxView Color="White" />
                     </pancake:PancakeView>
 
+                    <local:TintedCachedImage
+                        x:Name="SelectedBookBookmarkShadow"
+                        Margin="5"
+                        HeightRequest="20"
+                        HorizontalOptions="End"
+                        SvgSource="BookSwap.Resources.bookmark.svg"
+                        TintColor="{Binding SelectedBook.Colors.ExtraDarkAccent}"
+                        TranslationX="3"
+                        TranslationY="-7"
+                        VerticalOptions="Start"
+                        WidthRequest="20" />
+
+                    <local:TintedCachedImage
+                        x:Name="SelectedBookBookmark"
+                        Margin="5"
+                        HeightRequest="20"
+                        HorizontalOptions="End"
+                        SvgSource="BookSwap.Resources.bookmark.svg"
+                        TintColor="{Binding SwapFromBook.Colors.ExtraDarkAccent}"
+                        TranslationY="-10"
+                        VerticalOptions="Start"
+                        WidthRequest="20" />
+
+
                     <Label
+                        x:Name="SelectedBookDescriptionText"
                         Margin="10"
+                        FontSize="14"
                         LineBreakMode="TailTruncation"
                         MaxLines="4"
                         Style="{StaticResource Author}"
-                        Text="{Binding SwapFromBook.Description}"
+                        Text="{Binding SelectedBook.Description}"
                         VerticalOptions="Center" />
                 </Grid>
 

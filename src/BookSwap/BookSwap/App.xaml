@@ -5,6 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:sharedTransition="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
     mc:Ignorable="d">
     <Application.Resources>
 
@@ -63,7 +64,7 @@
 
 
 
-        <Style TargetType="NavigationPage">
+        <Style TargetType="sharedTransition:SharedTransitionNavigationPage">
             <Setter Property="BarBackgroundColor" Value="#FFF571" />
             <Setter Property="BarTextColor" Value="Black" />
         </Style>
