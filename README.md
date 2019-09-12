@@ -6,7 +6,17 @@ This UI Challenge is based on the fantastic dribble designs by [Tubik](https://d
 [![Dribbble Design](https://cdn.dribbble.com/users/418188/screenshots/3563019/bookswap_app_interactions_tubik.gif)](https://dribbble.com/shots/3563019-Book-Swap-App-Interactions)
 
 # Watch me code it live
-If you are so inclined you can watch me code this live, which is what I do on [my Twitch channel](https://twitch.tv/kymphillpotts). When we finish this, I'll upload videos to YouTube and link here
+If you are so inclined you can watch me code this live, which is what I do on [my Twitch channel](https://twitch.tv/kymphillpotts). 
+
+### Session 1
+[![Session 1](https://img.youtube.com/vi/aUk5Jtvmx8Q/0.jpg)](https://youtu.be/aUk5Jtvmx8Q)
+
+### Session 2
+[![Session 2](https://img.youtube.com/vi/tMdHE4UROFg/0.jpg)](https://youtu.be/tMdHE4UROFg)
+
+### Session 3
+[![Session 3](https://img.youtube.com/vi/ES96FnGo0Kg/0.jpg)](https://youtu.be/ES96FnGo0Kg)
+
 
 # Join me Live Coding
 I live code these UI Challenges over on Twitch, so please feel to join me there. Also feel free to smash the follow button and turn on notifications so you know when I'm doing more challenges.
