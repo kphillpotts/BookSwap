@@ -26,6 +26,7 @@ namespace BookSwap
 
             _accentFromPaint = new SKPaint() { Color = App.MainViewModel.SwapFromBook.Colors.Accent.ToSKColor() };
             _accentToPaint = new SKPaint() { Color = App.MainViewModel.SelectedBook.Colors.Accent.ToSKColor() };
+            
         }
 
         protected override void OnAppearing()

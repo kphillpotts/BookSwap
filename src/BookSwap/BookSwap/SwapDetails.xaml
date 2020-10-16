@@ -16,6 +16,7 @@
     ios:Page.PrefersStatusBarHidden="True"
     mc:Ignorable="d">
 
+
     <NavigationPage.TitleView>
         <Label
             Margin="-50,0,0,0"
@@ -80,14 +81,14 @@
                 <StackLayout Grid.Column="1" Margin="10,10,0,0">
                     <Label
                         x:Name="FromTitleLabel"
-                        Opacity="0"
+                        Opacity="1"
                         Style="{StaticResource BookTitle}"
                         Text="{Binding SwapFromBook.Title}"
                         TextColor="{Binding SwapFromBook.Colors.TitleColor}"
                         TranslationY="50" />
                     <Label
                         x:Name="FromAuthorLabel"
-                        Opacity="0"
+                        Opacity="1"
                         Style="{StaticResource Author}"
                         Text="{Binding SwapFromBook.Author}"
                         TextColor="{Binding SwapFromBook.Colors.TitleColor}"
